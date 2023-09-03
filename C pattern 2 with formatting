@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int rows, i, j;
+    
+    
+    //defining escape sequence
+    #define REDC "\x1b[31m"    
+    #define YELLOWC "\x1b[33m"
+
+    // Input: Number of rows
+    printf("Enter the number of rows for the star pattern: ");
+    scanf("%d", &rows);
+
+    // Half Pyramid
+    for (i = 0; i <= rows; i++) {
+        
+        for (j = 0; j <= i; j++) {
+            if(j<i){
+            printf(REDC "* ");}
+            else{printf(YELLOWC "* ");}
+        }
+        printf("\n");
+    }
+
+    // Inverted Half Pyramid
+    for (i = rows - 1; i >= 0; i--) {
+        for (j = 0; j <= i; j++) {
+            if(j<i){
+            printf(REDC "* ");}
+            else{printf(YELLOWC "* ");}
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
